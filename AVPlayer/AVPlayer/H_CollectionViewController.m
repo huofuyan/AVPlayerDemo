@@ -110,8 +110,6 @@ static NSString *cellId = @"cellId";
     
     if (!_arrayM) {
         
-     
-        
         NSMutableArray *array = [NSMutableArray array];
         for (int i = 0; i<4; i++) {
             [array addObject:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"guide%d",i] ofType:@"mp4"]];
@@ -124,7 +122,7 @@ static NSString *cellId = @"cellId";
 }
 
 
-
+//将要显示的item
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
     H_CollectionViewCell *currentCell = (H_CollectionViewCell *)cell;
@@ -136,6 +134,8 @@ static NSString *cellId = @"cellId";
     NSLog(@"当前显示的cell。row %ld",indexPath.row);
 }
 
+
+//item已经显示（上一个item）
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSUInteger i = indexPath.row + 1;
